@@ -2,8 +2,8 @@ ONLINE EXAMINATION PORTAL
 ==============
 
 The major objective of the project is to develop software which helps in conducting an online examination for the trainees during their training session for the constable & S.I., by the police department of Andhra Pradesh. 
-The other major objective is to prepare an automated coding system which helps in giving codes to the answer sheets for the descriptive examination as per trainee  and to make the decoding process,  marks report generation for the answer sheets easier and automatic
---------------
+
+The another objective is to prepare an automated coding system which helps in giving codes to the answer sheets for the descriptive examination as per trainee  and to make the decoding process,  marks report generation for the answer sheets easier and automatic
 
 *Following are the feature in the project*
 -It automates the entire process of examination.

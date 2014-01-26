@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Marks Subject Prompt </title>
+<script language="JavaScript">
+var sname,ccode,a,b,c;
+function validate()
+ {
+	sname=document.subprmt.subname.value;
+    ccode=document.subprmt.ccode.value;
+    a=document.subprmt.doe.value;
+    b=document.subprmt.moe.value;
+    c=document.subprmt.yoe.value;
+	if(sname=="")
+	{
+	   alert ("Please enter the Paper Name");
+	   return false;
+	 }
+	
+  if((a=="") ||(b=="")||(c==""))
+   {
+     alert ("enter the date of exam in given format");
+      return false;
+   }
+  if(isNaN(a))
+   {
+     alert("enter date in number");
+     return false;
+   }
+   if(isNaN(c))
+   {
+     alert("enter year in number");
+     return false;
+   }
+  if((a<1) || (a>31))
+  {
+	alert("enter date in between 1 to 31 only");
+	return false;
+   }
+  if((c<1000) || (c>9999))
+  {
+	alert("enter year in 4 digit number only");
+	return false;
+   }
+ if(((c%100==0) || (c%4==0)) && (c%400!=0))
+  {
+   if(b=="Feb")
+   {
+   if((a<1) || (a>29))
+    {
+	alert("enter date in between 1 to 29 only");
+	return false;
+	}
+   }
+  }
+ else
+ { 
+	if(b=="Feb")
+   {
+	 if((a<1) || (a>28))
+     {
+	alert("enter date in between 1 to 28 only");
+	return false;
+	}
+   }
+ }
+ if(ccode=="")
+ {
+   alert ("Please enter the Center Code");
+   return false;
+ } 
+ return true;
+ }
+function submitSubject()
+{
+	if(validate())
+	{
+		var table=ccode+sname+a+b+c;
+		if(confirm("Do you want to save this student details to File"))
+		{
+
+			var fp=prompt("Enter the Path to Save the file","d:\\" );
+			document.subprmt.filepath.value=fp;			
+		}
+		if(confirm("Are you sure to Delete the List"))
+		{
+        document.cookie="table="+escape(table)+"; path=/PaperCoding/JSP/";
+        return true;
+		}
+		else
+			return false;
+	}
+	else
+	return false;
+}
+</script>
+</head>
+<body bgcolor="lightgray">
+<br><br><br><br><br><br>
+<form name="subprmt" method="post"  action="./JSP/deletemarklist.jsp" onSubmit="return submitSubject();" >
+<table cellspacing="25px" align="center">
+<caption><u style=" font-size:25px; color: blue">Delete Marks List</u><br/><br/></caption>
+<tr><th align="left">Paper Name:</th><td><input type="text" name="subname"></td></tr>
+<tr><th align="left">Date of Exam (dd-mm-yyyy):</th>
+    <td><input type="text" name="doe" size="2">
+			<select name="moe" >
+				<option selected></option>
+				<option >Jan</option>
+				<option >Feb</option>
+				<option >Mar</option>
+				<option >Apr</option>
+				<option >May</option>
+				<option >Jun</option>
+				<option >Jul</option>
+				<option >Aug</option>
+				<option >Sep</option>
+				<option >Oct</option>
+				<option >Nov</option>
+				<option >Dec</option>
+			</select>
+		<input type="text" name="yoe" size="4"></td>
+ </tr>
+<tr><th align="left">Training Center Code:</th><td><input type="text" name="ccode"></td></tr>
+<tr><td></td><td><br><input type="Submit" value="Submit"></td></tr>
+</table>
+<input  type="hidden" name="filepath" value="">
+</form>
+</body>
+</html>

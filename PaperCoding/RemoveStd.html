@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Remove Trainee</title>
+<script language="javascript">
+function validate()
+{
+	if(document.remstd.stpno.value=="")
+	{
+		alert ("Please enter the Trainee Roll No.");
+		return false;
+	}	
+	return confirm(" Are you Sure to delete Trainee with Details \n\n\t\t StpNo :"+document.remstd.stpno.value+"\n\n");	
+}
+</script>
+</head>
+<body bgcolor="yellowgreen">
+<br><br><br><br><br><br>
+<form name="remstd" method="post" action="./JSP/remstd.jsp" onSubmit="return validate();">
+<table align="center" cellspacing="20px" >
+<caption><u style=" font-size:25px; color: blue">Remove Trainee</u><br></br><br></br><br></br></caption>
+<tr><th>Enter Chest No.:</th><td> <input type="text" name="stpno"></td></tr>
+<tr><td></td><td > <input type="submit" value="Remove Trainee"></td></tr>
+<tr><td></td><td align="left"><u style="text-align:center"><a href="javascript:history.go(-1)">Back</a></u></td></tr>
+</table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Upload Trainee List</title>
+<script type="text/javascript">
+function validate(temp)
+{
+var file=temp.value;
+var l=file.length;
+var index=file.lastIndexOf(".csv")
+if((l-index)==4)
+{
+	document["f"].action="./JSP/uploadcodelist.jsp"
+	document["f"].submit();
+}
+else
+{
+	alert("Please Upload files only in .csv fromat");
+}
+}
+</script>
+</head>
+<body bgcolor="Thistle">
+<br><br><br><br><br>
+<table align="center" border=0>
+<caption><u style=" font-size:25px; color: blue">Upload Trainee Codes List</u><br></br><br></br><br></br></caption>
+	<tr><td> 
+	<form name="f" enctype="multipart/form-data" method="post" > <!--action="./JSP/uploadmarkslist.jsp">-->
+	  <b>Search File &nbsp;</b>
+	  <input type="file" name="Search File" value="Search File" size="40" onChange="validate(this)"/>
+   </form>
+		</td></tr>
+		</table>
+<h4 style="text-align:center"><a href="javascript:history.go(-1)">Back</a></h4>
+</body>
+</html>

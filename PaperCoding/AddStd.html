@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add Student</title>
+<script language="javascript">
+function validate()
+{
+	with(document.addstd)
+	{
+		if(sname.value=="")
+		{
+			alert("Please enter Student name");
+			return false;
+		}
+		if(stpno.value=="")
+		{
+		alert("Please enter Student Roll No.");
+		return false;
+		}
+		return true;  
+	}	
+}
+</script>
+</head>
+<body bgcolor="yellowgreen">
+<br><br><br><br><br>
+<form name="addstd" method="post" action="./JSP/addstd.jsp" onsubmit=" return validate()">
+<table align="center" cellspacing="15px">
+<caption><u style=" font-size:25px; color: blue">Add Trainee</u><br></br><br></br><br></br></caption>
+<tr><th>Chest Number :</th><td><input type="text" name="stpno"></td></tr>
+<tr><th>Trainee Name :</th><td><input type="text" name="sname"></td></tr>
+<tr><td></td><td > <input type="submit" value="Add Trainee"></td></tr>
+<tr><td></td><td align="left"><u style="text-align:center"><a href="javascript:history.go(-1)">Back</a></u></td></tr>
+</table>
+</form>
+
+</body>
+</html>

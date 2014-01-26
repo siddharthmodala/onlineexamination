@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Marks Prompt</title>
+<script language="JavaScript">
+function validate()
+{
+	var a=document.ecode.sno.value;
+	var b=document.ecode.scode.value;
+	if(a=="")
+	{
+		alert("Please enter Student Code");
+		return false;
+	}
+	if(b=="")
+	{
+		alert("Please enter Code");
+		return false;
+	}
+	if(isNaN(b))
+	{
+		alert("Please enter Code in Numbers only");
+		return false;
+	}	
+	return true;
+}
+</script>
+</head>
+<body bgcolor="Thistle">
+<br><br><br><br>
+<form name="ecode" method="post" action="./JSP/codeentry.jsp" onSubmit="return validate();" >
+<table align="center" cellspacing="20px">
+<caption><b style=" font-size:25px; color:blue;"><u><i>Manual Codes Entry</i></u></b><br></br><br></br></caption>
+<tr><th align="left">Chest Number :</th><td><input type="text" name="sno"></td></tr>
+<tr><th align="left">Code Given :</th><td><input type="text" name="scode"></td></tr>
+<tr><td></td><td><input type="Submit" value="Submit Code"></td></tr>
+</table>
+</form> 
+</body>
+</html>

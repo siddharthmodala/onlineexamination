@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Upload Trainee List</title>
+<script type="text/javascript">
+function validate(temp)
+{
+var file=temp.value;
+var l=file.length;
+var index=file.lastIndexOf(".csv")
+if((l-index)==4)
+{
+	document["f"].action="./JSP/newstudentlist.jsp"
+	document["f"].submit();
+}
+else
+{
+	alert("Please Upload files only in .csv fromat");
+}
+}
+</script>
+</head>
+<body bgcolor="yellowgreen">
+<br><br><br><br><br>
+<table align="center" border=0>
+<caption><u style=" font-size:25px; color: blue">Upload Trainee List</u><br></br><br></br><br></br></caption>
+<tr><td>
+<b><u>NOTE:</u></b><br><br>
+<font size="5px" >This operation will remove the current Trainee List
+<br>and replace it with the new one.</font><br><br><br>
+<b>To View The Current Trainee List Click <a href="./JSP/displaystddtls.jsp">here</a></b><br><br>
+</td></tr>
+	<tr><td> 
+	<form name="f" enctype="multipart/form-data" method="post" > <!--action="./JSP/newstudent.jsp">-->
+	  <b>Search File &nbsp;</b>
+	  <input type="file" name="Search File" value="Search File" size="40" onChange="validate(this)"/>
+			<!-- <tr><td align="center"><br><input type="submit" value="Upload"></td></tr>-->
+   </form>
+		</td></tr>
+		</table>
+<h4 style="text-align:center"><a href="javascript:history.go(-1)">Back</a></h4>
+</body>
+</html>
